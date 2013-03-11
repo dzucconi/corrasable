@@ -15,7 +15,7 @@ class Dictionary
       # 
       next if word =~ /\(\d\) ?$/
       
-      syllables = phonemes.grep(/^[AEIUO]/).length
+      syllables = phonemes.grep(/^[AEIUO]/).size
       
       create(word, phonemes, syllables, language)
     end
@@ -24,6 +24,6 @@ class Dictionary
   def self.create(word, phonemes, syllables, language=:en)
     puts "#{word} #{phonemes} - #{syllables} (#{language})"
 
-    # Word.create!(word: word.upcase, phonemes: phonemes, syllables: syllables.to_i, language: language.to_s)
+    Word.create!(word: word.upcase, phonemes: phonemes, syllables: syllables.to_i, language: language)
   end
 end
