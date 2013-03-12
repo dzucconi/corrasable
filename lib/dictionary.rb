@@ -15,6 +15,8 @@ class Dictionary
       # 
       next if word =~ /\(\d\) ?$/
       
+      # Count the number of stressed vowels
+      # 
       syllables = phonemes.grep(/^[AEIUO]/).size
       
       create(word, phonemes, syllables, language)
