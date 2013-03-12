@@ -1,21 +1,16 @@
 class AnalysisController < ApplicationController
-  before_filter :get_report
-
   def report
+    @report = Lingua::EN::Readability.new(params[:text])
+
     render "analysis/report"
   end
 
   def syllables
+    @report    = Lingua::EN::Readability.new(params[:text])
     @syllables = @report.words.collect do |word|
-      [word, Lingua::EN::Syllable.syllables(word)]
+      [word, Word.syllables(word)]
     end
 
     render json: @syllables
-  end
-
-private
-
-  def get_report
-    @report = Lingua::EN::Readability.new(params[:text])
   end
 end
