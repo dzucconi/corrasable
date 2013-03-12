@@ -19,4 +19,10 @@ class Word
     # 
     Lingua::EN::Syllable.syllables(word)
   end
+
+  def self.phonemes(word)
+    lookup(word).phonemes.join(" ")
+  rescue Mongoid::Errors::DocumentNotFound
+    "N/A"
+  end
 end
