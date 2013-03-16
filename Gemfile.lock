@@ -43,9 +43,6 @@ GEM
     hike (1.2.1)
     i18n (0.6.4)
     journey (1.0.4)
-    jquery-rails (2.2.1)
-      railties (>= 3.0, < 5.0)
-      thor (>= 0.14, < 2.0)
     json (1.7.7)
     lingua (0.6.2)
     mail (2.4.4)
@@ -80,6 +77,10 @@ GEM
       activesupport (= 3.2.12)
       bundler (~> 1.0)
       railties (= 3.2.12)
+    rails-api (0.0.3)
+      actionpack (>= 3.2.6)
+      railties (>= 3.2.6)
+      tzinfo (~> 0.3.31)
     railties (3.2.12)
       actionpack (= 3.2.12)
       activesupport (= 3.2.12)
@@ -115,11 +116,11 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
-  jquery-rails
   lingua (~> 0.6.2)
   mongoid (~> 3.1.2)
   oj (~> 2.0.9)
   rabl (~> 0.8.0)
   rails (~> 3.2.12)
+  rails-api (~> 0.0.3)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)

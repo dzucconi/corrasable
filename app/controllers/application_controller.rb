@@ -1,6 +1,4 @@
-class ApplicationController < ActionController::Base
-  protect_from_forgery
-  
+class ApplicationController < ActionController::API
   def home
     render text: "&c."
   end
