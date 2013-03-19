@@ -12,7 +12,7 @@ rake dictionary:generate # todo
 # Examples
 
 ```
-POST /?text=Language operates between literal and metaphorical signification.
+POST http://www.corrasable.com/?text=Language operates between literal and metaphorical signification.
 ```
 
 ```json
@@ -70,11 +70,26 @@ POST /?text=Language operates between literal and metaphorical signification.
 ----
 
 ```
-POST /phonemes?text=Language operates between literal and metaphorical signification.
+POST http://www.corrasable.com/phonemes?text=Language operates between literal and metaphorical signification.
 ```
 
 ```json
 {
   "text": "L AE1 NG G W AH0 JH | AA1 P ER0 EY2 T S | B IH0 T W IY1 N | L IH1 T ER0 AH0 L | AH0 N D | M EH2 T AH0 F AO1 R IH0 K AH0 L | N/A"
+}
+```
+
+----
+
+```
+GET http://www.corrasable.com/words/difficult
+```
+
+```json
+{
+  "word": "DIFFICULT",
+  "phonemes": ["D", "IH1", "F", "AH0", "K", "AH0", "L", "T"],
+  "syllables": 3,
+  "language": "en"
 }
 ```
