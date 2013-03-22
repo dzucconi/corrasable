@@ -7,6 +7,7 @@ gem "lingua", "~> 0.6.2"
 gem "rabl", "~> 0.8.0"
 gem "oj", "~> 2.0.9"
 gem "mongoid", "~> 3.1.2"
+gem "rack-cors", "~> 0.2.7"
 
 group :assets do
   gem "sass-rails", "~> 3.2.3"
