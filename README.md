@@ -70,20 +70,38 @@ POST http://www.corrasable.com/?text=Language operates between literal and metap
 ----
 
 ```
-POST http://www.corrasable.com/phonemes?text=Language operates between literal and metaphorical signification.
+POST http://www.corrasable.com/phonemes
+text=Where words are scarce, they are seldom spent in vain,
+For they breathe truth that breathe their words in pain
 ```
 
 ```json
 [
   [
-    "L AE1 NG G W AH0 JH",
-    "AA1 P ER0 EY2 T S",
-    "B IH0 T W IY1 N",
-    "L IH1 T ER0 AH0 L",
-    "AH0 N D",
-    "M EH2 T AH0 F AO1 R IH0 K AH0 L",
+    "W EH1 R",
+    "W ER1 D Z",
+    "AA1 R",
+    "S K EH1 R S",
     "N/A",
+    "DH EY1",
+    "AA1 R",
+    "S EH1 L D AH0 M",
+    "S P EH1 N T",
+    "IH0 N",
+    "V EY1 N",
     "N/A"
+  ],
+  [
+    "F AO1 R",
+    "DH EY1",
+    "B R IY1 DH",
+    "T R UW1 TH",
+    "DH AE1 T",
+    "B R IY1 DH",
+    "DH EH1 R",
+    "W ER1 D Z",
+    "IH0 N",
+    "P EY1 N"
   ]
 ]
 ```
