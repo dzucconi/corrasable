@@ -8,6 +8,7 @@ gem "rabl", "~> 0.8.0"
 gem "oj", "~> 2.0.9"
 gem "mongoid", "~> 3.1.2"
 gem "rack-cors", "~> 0.2.7"
+gem "tokenizer", "~> 0.1.1"
 
 group :assets do
   gem "sass-rails", "~> 3.2.3"
