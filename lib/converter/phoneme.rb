@@ -20,7 +20,7 @@ module Converter
     def phonemes
       @phonemes ||= tokenized_lines.map do |words|
         words.map do |word|
-          if /\W/ =~ word
+          if /^\W$/ =~ word
             word
           else
             Word.phonemes(word)
