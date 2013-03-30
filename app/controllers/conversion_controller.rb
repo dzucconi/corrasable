@@ -3,6 +3,6 @@ class ConversionController < ApplicationController
     converter = Converter::Phoneme.new(params[:text])
     @phonemes = converter.phonemes
 
-    render json: { text: @phonemes }
+    render json: @phonemes
   end
 end
