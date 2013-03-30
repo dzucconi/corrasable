@@ -28,4 +28,4 @@ class Dictionary
 
     Word.create!(word: word.upcase, phonemes: phonemes, syllables: syllables.to_i, language: language)
   end
-end
+end # Dictionary
