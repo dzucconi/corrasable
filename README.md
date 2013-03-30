@@ -74,9 +74,18 @@ POST http://www.corrasable.com/phonemes?text=Language operates between literal a
 ```
 
 ```json
-{
-  "text": "L AE1 NG G W AH0 JH | AA1 P ER0 EY2 T S | B IH0 T W IY1 N | L IH1 T ER0 AH0 L | AH0 N D | M EH2 T AH0 F AO1 R IH0 K AH0 L | N/A"
-}
+[
+  [
+    "L AE1 NG G W AH0 JH",
+    "AA1 P ER0 EY2 T S",
+    "B IH0 T W IY1 N",
+    "L IH1 T ER0 AH0 L",
+    "AH0 N D",
+    "M EH2 T AH0 F AO1 R IH0 K AH0 L",
+    "N/A",
+    "N/A"
+  ]
+]
 ```
 
 ----
