@@ -1,7 +1,7 @@
 class ConversionController < ApplicationController
   def phonemes
-    @report   = Lingua::EN::Readability.new(params[:text])
-    @phonemes = @report.words.collect { |word| Word.phonemes(word) }.join(" | ")
+    converter = Converter::Phoneme.new(params[:text])
+    @phonemes = converter.phonemes
 
     render json: { text: @phonemes }
   end
