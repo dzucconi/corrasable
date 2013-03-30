@@ -82,14 +82,14 @@ For they breathe truth that breathe their words in pain
     "W ER1 D Z",
     "AA1 R",
     "S K EH1 R S",
-    "N/A",
+    ",",
     "DH EY1",
     "AA1 R",
     "S EH1 L D AH0 M",
     "S P EH1 N T",
     "IH0 N",
     "V EY1 N",
-    "N/A"
+    ","
   ],
   [
     "F AO1 R",
