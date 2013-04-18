@@ -11,8 +11,8 @@ rake dictionary:generate # todo
 
 # Examples
 
-```
-POST http://www.corrasable.com/?text=Language operates between literal and metaphorical signification.
+```bash
+curl -d 'text=Language operates between literal and metaphorical signification.'  http://api.corrasable.com/
 ```
 
 ```json
@@ -69,10 +69,8 @@ POST http://www.corrasable.com/?text=Language operates between literal and metap
 
 ----
 
-```
-POST http://www.corrasable.com/phonemes
-text=Where words are scarce, they are seldom spent in vain,
-For they breathe truth that breathe their words in pain
+```bash
+curl -d $'text=Where words are scarce, they are seldom spent in vain,\nFor they breathe truth that breathe their words in pain'  http://api.corrasable.com/phonemes
 ```
 
 ```json
@@ -109,7 +107,7 @@ For they breathe truth that breathe their words in pain
 ----
 
 ```
-GET http://www.corrasable.com/words/difficult
+curl http://api.corrasable.com/words/difficult
 ```
 
 ```json

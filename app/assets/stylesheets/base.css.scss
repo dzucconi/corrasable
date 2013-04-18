@@ -1,0 +1,41 @@
+$unit: 20px;
+
+* {
+     -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 20px;
+  line-height: $unit;
+  font-weight: normal;
+  margin: 0 0 $unit $unit;
+  font-weight: bold;
+}
+
+hr {
+  margin: ($unit * 2) 0;
+  border: none;
+  height: 1px;
+  background: #eee;
+}
+
+pre,
+code {
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: 3px;
+}
+
+#content {
+  margin: $unit;
+}
