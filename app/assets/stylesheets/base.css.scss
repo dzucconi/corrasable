@@ -14,18 +14,22 @@ body {
 h1,
 h2,
 h3 {
-  font-size: 20px;
   line-height: $unit;
   font-weight: normal;
-  margin: 0 0 $unit $unit;
+  margin: 0 0 $unit ($unit * 2);
   font-weight: bold;
 }
 
+h1 { font-size: 20px; }
+h2 { font-size: 16px; }
+h3 { font-size: 16px; }
+
+
 hr {
-  margin: ($unit * 2) 0;
+  margin: ($unit ) 0;
   border: none;
   height: 1px;
-  background: #eee;
+  background: #000;
 }
 
 pre,
@@ -33,7 +37,19 @@ code {
   font-family: monospace;
   font-size: 14px;
   line-height: 18px;
-  border-radius: 3px;
+}
+
+pre {
+  border: 1px solid;
+  border-width: 0 0 0 1px;
+  padding: 0 0 0 $unit;
+
+  & > code {
+    padding: 0;
+  }
+}
+
+code {
 }
 
 #content {

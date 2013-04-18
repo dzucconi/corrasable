@@ -1,5 +1,7 @@
 # Corrasable
 
+Is an API that packages together tools like [Lingua](http://www.pressure.to/ruby/) and [The CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict).
+
 ```bash
 heroku create
 heroku addons:add mongolab:starter
@@ -7,9 +9,9 @@ git push heroku master
 rake dictionary:generate # todo
 ```
 
----
+----
 
-# Examples
+### Report
 
 ```bash
 curl -d 'text=Language operates between literal and metaphorical signification.'  http://api.corrasable.com/
@@ -67,7 +69,7 @@ curl -d 'text=Language operates between literal and metaphorical signification.'
 }
 ```
 
-----
+### Phonemes
 
 ```bash
 curl -d $'text=Where words are scarce, they are seldom spent in vain,\nFor they breathe truth that breathe their words in pain'  http://api.corrasable.com/phonemes
@@ -104,7 +106,7 @@ curl -d $'text=Where words are scarce, they are seldom spent in vain,\nFor they 
 ]
 ```
 
-----
+### Word
 
 ```
 curl http://api.corrasable.com/words/difficult

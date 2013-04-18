@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require vendor/normalize
+ *= require vendor/xcode
  *= require_tree .
  */
