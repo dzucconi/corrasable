@@ -106,9 +106,42 @@ curl -d $'text=Where words are scarce, they are seldom spent in vain,\nFor they 
 ]
 ```
 
+### Syllables
+
+```bash
+curl -d 'text=My sense of language is that it is matter and not ideas - i.e., "printed matter".' http://api.corrasable.com/syllables
+```
+
+```json
+[
+  [
+    { "My": 1 },
+    { "sense": 1 },
+    { "of": 1 },
+    { "language": 2 },
+    { "is": 1 },
+    { "that": 1 },
+    { "it": 1 },
+    { "is": 1 },
+    { "matter": 2 },
+    { "and": 1 },
+    { "not": 1 },
+    { "ideas": 3 },
+    { "-": 0 },
+    { "i": 1 },
+    { ".e": 1 },
+    { ".": 0 },
+    { ",": 0 },
+    { "\"printed": 2 },
+    { "matter\"": 2 },
+    { ".": 0 }
+  ]
+]
+```
+
 ### Word
 
-```
+```bash
 curl http://api.corrasable.com/words/difficult
 ```
 
