@@ -1,10 +1,12 @@
 module Converter
   class Phoneme
     attr_reader :string,
+                :tokenizer,
                 :phonemes
 
     def initialize(string)
-      @string = string
+      @string    = string
+      @tokenizer = Tokenizer::Tokenizer.new(:en)
     end
 
     def lines
@@ -13,7 +15,7 @@ module Converter
 
     def tokenized_lines
       lines.map do |line|
-        Tokenizer::Tokenizer.new.tokenize(line)
+        tokenizer.tokenize(line)
       end
     end
 
