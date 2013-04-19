@@ -1,6 +1,6 @@
 # Corrasable
 
-Is an API that packages together tools like [Lingua](http://www.pressure.to/ruby/) and [The CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict).
+Is an API that packages together tools like [Lingua](http://www.pressure.to/ruby/) and [The CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict) to assist in analyzing text and converting it into different representations.
 
 ```bash
 heroku create
