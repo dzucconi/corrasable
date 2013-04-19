@@ -9,21 +9,20 @@ $unit: 20px;
 body {
   margin: 0;
   padding: 0;
+  text-rendering: optimizeLegibility;
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 19px;
 }
 
 h1,
 h2,
 h3 {
-  line-height: $unit;
-  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
   margin: 0 0 $unit ($unit * 2);
-  font-weight: bold;
+  text-decoration: underline;
 }
-
-h1 { font-size: 20px; }
-h2 { font-size: 16px; }
-h3 { font-size: 16px; }
-
 
 hr {
   margin: ($unit ) 0;
@@ -34,9 +33,6 @@ hr {
 
 pre,
 code {
-  font-family: monospace;
-  font-size: 14px;
-  line-height: 18px;
 }
 
 pre {
