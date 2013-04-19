@@ -6,10 +6,8 @@ class AnalysisController < ApplicationController
   end
 
   def syllables
-    @report    = Lingua::EN::Readability.new(params[:text])
-    @syllables = @report.words.collect do |word|
-      [word, Word.syllables(word)]
-    end
+    analyzer   = Analyzer::Syllable.new(params[:text])
+    @syllables = analyzer.syllables
 
     render json: @syllables
   end
