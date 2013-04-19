@@ -5,4 +5,11 @@ class ConversionController < ApplicationController
 
     render json: @phonemes
   end
+
+  def nato
+    converter = Converter::Nato.new(params[:text])
+    @nato = converter.nato
+
+    render json: @nato
+  end
 end
