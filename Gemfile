@@ -10,6 +10,7 @@ gem "mongoid", "~> 3.1.2"
 gem "rack-cors", "~> 0.2.7"
 gem "tokenizer", "~> 0.1.1"
 gem "redcarpet", "~> 2.2.2"
+gem "NATO", :git => "git://github.com/dzucconi/NATO.git"
 
 group :assets do
   gem "sass-rails", "~> 3.2.3"

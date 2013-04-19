@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/dzucconi/NATO.git
+  revision: 43bad1e256f378a42d9d6ab4b2f382eb2c2d0023
+  specs:
+    NATO (0.0.2)
+      tokenizer
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -119,6 +126,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  NATO!
   coffee-rails (~> 3.2.1)
   lingua (~> 0.6.2)
   mongoid (~> 3.1.2)
