@@ -1,13 +1,8 @@
 # Corrasable
 
-Is an API that packages together tools like [Lingua](http://www.pressure.to/ruby/) and [The CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict) to assist in analyzing text and converting it into different representations.
+https://github.com/dzucconi/corrasable
 
-```bash
-heroku create
-heroku addons:add mongolab:starter
-git push heroku master
-rake dictionary:generate # todo
-```
+*Corrasable* an API that packages together tools like [Lingua](http://www.pressure.to/ruby/) and [The CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict) to assist in analyzing text and converting it into alternate representations.
 
 ----
 
@@ -106,7 +101,44 @@ curl -d $'text=Where words are scarce, they are seldom spent in vain,\nFor they 
 ]
 ```
 
-### Syllables
+### NATO Phonetic Alphabet
+
+```bash
+curl -d $'text=Where words are scarce, they are seldom spent in vain,\nFor they breathe truth that breathe their words in pain'  http://api.corrasable.com/nato
+```
+
+```json
+[
+  [
+    ["Whiskey", "Hotel", "Echo", "Romeo", "Echo"],
+    ["Whiskey", "Oscar", "Romeo", "Delta", "Sierra"],
+    ["Alfa", "Romeo", "Echo"],
+    ["Sierra", "Charlie", "Alfa", "Romeo", "Charlie", "Echo"],
+    [","],
+    ["Tango", "Hotel", "Echo", "Yankee"],
+    ["Alfa", "Romeo", "Echo"],
+    ["Sierra", "Echo", "Lima", "Delta", "Oscar", "Mike"],
+    ["Sierra", "Papa", "Echo", "November", "Tango"],
+    ["India", "November"],
+    ["Victor", "Alfa", "India", "November"],
+    [","]
+  ],
+  [
+    ["Foxtrot", "Oscar", "Romeo"],
+    ["Tango", "Hotel", "Echo", "Yankee"],
+    ["Bravo", "Romeo", "Echo", "Alfa", "Tango", "Hotel", "Echo"],
+    ["Tango", "Romeo", "Uniform", "Tango", "Hotel"],
+    ["Tango", "Hotel", "Alfa", "Tango"],
+    ["Bravo", "Romeo", "Echo", "Alfa", "Tango", "Hotel", "Echo"],
+    ["Tango", "Hotel", "Echo", "India", "Romeo"],
+    ["Whiskey", "Oscar", "Romeo", "Delta", "Sierra"],
+    ["India", "November"],
+    ["Papa", "Alfa", "India", "November"]
+  ]
+]
+```
+
+### Syllable Counts
 
 ```bash
 curl -d 'text=My sense of language is that it is matter and not ideas - i.e., "printed matter".' http://api.corrasable.com/syllables
@@ -139,7 +171,7 @@ curl -d 'text=My sense of language is that it is matter and not ideas - i.e., "p
 ]
 ```
 
-### Word
+### Words
 
 ```bash
 curl http://api.corrasable.com/words/difficult
