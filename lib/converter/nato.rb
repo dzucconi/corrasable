@@ -1,7 +1,6 @@
 module Converter
   class Nato
-    attr_reader :string,
-                :nato
+    attr_reader :string, :nato
 
     def initialize(string)
       @string = string

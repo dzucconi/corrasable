@@ -16,7 +16,6 @@ class Word
     lookup(word).syllables
   rescue Mongoid::Errors::DocumentNotFound
     # Fallback to guessing if the word is not in the dictionary
-    # 
     Lingua::EN::Syllable.syllables(word)
   end
 

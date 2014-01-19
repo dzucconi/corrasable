@@ -1,8 +1,6 @@
 module Analyzer
   class Syllable
-    attr_reader :string,
-                :tokenizer,
-                :syllables
+    attr_reader :string, :tokenizer, :syllables
 
     def initialize(string)
       @string    = string
