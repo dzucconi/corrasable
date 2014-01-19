@@ -31,23 +31,12 @@ hr {
   background: #000;
 }
 
-pre,
-code {
-}
-
 pre {
   border: 1px solid;
   border-width: 0 0 0 1px;
   padding: 0 0 0 $unit;
 
-  & > code {
-    padding: 0;
-  }
+  & > code { padding: 0; }
 }
 
-code {
-}
-
-#content {
-  margin: $unit;
-}
+#content { margin: $unit; }

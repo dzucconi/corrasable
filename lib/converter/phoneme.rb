@@ -1,8 +1,6 @@
 module Converter
   class Phoneme
-    attr_reader :string,
-                :tokenizer,
-                :phonemes
+    attr_reader :string, :tokenizer, :phonemes
 
     def initialize(string)
       @string    = string
