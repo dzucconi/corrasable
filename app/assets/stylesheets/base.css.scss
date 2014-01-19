@@ -37,15 +37,9 @@ hr {
   background: #000;
 }
 
-pre {
-  // border: 1px solid;
-  // border-width: 0 0 0 1px;
-  // padding: 0 0 0 $unit;
-
-  & > code {
-    padding: 0;
-    @include monospaceFont();
-  }
+pre > code {
+  padding: 0;
+  @include monospaceFont();
 }
 
 #content { margin: $unit; }
