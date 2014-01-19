@@ -12,8 +12,10 @@ gem "tokenizer"
 gem "redcarpet"
 gem "NATO", github: "dzucconi/NATO"
 
-group :assets do
-  gem "sass-rails"
-  gem "coffee-rails"
-  gem "uglifier"
+gem "sass-rails"
+gem "coffee-rails"
+gem "uglifier"
+
+group :production do
+  gem 'rails_12factor'
 end
