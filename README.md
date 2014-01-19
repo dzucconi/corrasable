@@ -2,65 +2,86 @@
 
 https://github.com/dzucconi/corrasable
 
-*Corrasable* is an API that packages together tools like [Lingua](http://www.pressure.to/ruby/) and [The CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict) to assist in analyzing text and converting it into alternate representations.
+*Corrasable* is a web service that packages together tools like [Lingua](http://www.pressure.to/ruby/) and [The CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict) to assist in analyzing text and converting it into alternate representations.
 
 ----
 
 ### Report
 
 ```bash
-curl -d 'text=Language operates between literal and metaphorical signification.'  http://api.corrasable.com/
+curl -d "text=But when Leviathan is the text, the case is altered. Fain am I to stagger to this emprise under the weightiest words of the dictionary. And here be it said, that whenever it has been convenient to consult one in the course of these dissertations, I have invariably used a huge quarto edition of Johnson, expressly purchased for that purpose; because that famous lexicographer's uncommon personal bulk more fitted him to compile a lexicon to be used by a whale author like me." http://api.corrasable.com
 ```
 
 ```json
 {
-  "num_paragraphs": 1,
-  "num_sentences": 1,
-  "num_chars": 65,
-  "num_characters": 65,
-  "num_words": 7,
-  "num_syllables": 22,
-  "num_unique_words": 7,
-  "words_per_sentence": 7.0,
-  "syllables_per_word": 3.142857142857143,
-  "kincaid": 24.22571428571429,
-  "flesch": -66.15571428571423,
-  "fog": 25.65714285714286,
-  "percent_fog_complex_words": 57.14285714285714,
-  "text": "Language operates between literal and metaphorical signification.",
-  "paragraphs": [
-      "Language operates between literal and metaphorical signification."
-    ],
-  "sentences": [
-      "Language operates between literal and metaphorical signification."
-    ],
-  "words": [
-      "Language",
-      "operates",
-      "between",
-      "literal",
-      "and",
-      "metaphorical",
-      "signification"
-    ],
-  "unique_words": [
-      "Language",
-      "operates",
-      "between",
-      "literal",
-      "and",
-      "metaphorical",
-      "signification"
-    ],
-  "frequencies": {
-    "Language": 1,
-    "operates": 1,
-    "between": 1,
-    "literal": 1,
-    "and": 1,
-    "metaphorical": 1,
-    "signification": 1
-  }
+    "num_paragraphs": 1,
+    "num_sentences": 3,
+    "num_chars": 340,
+    "num_characters": 340,
+    "num_words": 60,
+    "num_syllables": 91,
+    "num_unique_words": 48,
+    "words_per_sentence": 20.0,
+    "syllables_per_word": 1.51666666666667,
+    "kincaid": 10.1066666666667,
+    "flesch": 58.2250000000001,
+    "fog": 13.3333333333333,
+    "percent_fog_complex_words": 13.3333333333333,
+    "text": "But when Leviathan is the text, the case is altered. Fain am I to stagger to this emprise under the weightiest words of the dictionary. And here be it said, that whenever it has been convenient to consult one in the course of these dissertations, I have invariably used a huge quarto edition of Johnson, expressly purchased for that purpose",
+    "paragraphs": ["But when Leviathan is the text, the case is altered. Fain am I to stagger to this emprise under the weightiest words of the dictionary. And here be it said, that whenever it has been convenient to consult one in the course of these dissertations, I have invariably used a huge quarto edition of Johnson, expressly purchased for that purpose"],
+    "sentences": ["But when Leviathan is the text, the case is altered.", "Fain am I to stagger to this emprise under the weightiest words of the dictionary.", "And here be it said, that whenever it has been convenient to consult one in the course of these dissertations, I have invariably used a huge quarto edition of Johnson, expressly purchased for that purpose"],
+    "words": ["But", "when", "Leviathan", "is", "the", "text", "the", "case", "is", "altered", "Fain", "am", "I", "to", "stagger", "to", "this", "emprise", "under", "the", "weightiest", "words", "of", "the", "dictionary", "And", "here", "be", "it", "said", "that", "whenever", "it", "has", "been", "convenient", "to", "consult", "one", "in", "the", "course", "of", "these", "dissertations", "I", "have", "invariably", "used", "a", "huge", "quarto", "edition", "of", "Johnson", "expressly", "purchased", "for", "that", "purpose"],
+    "unique_words": ["But", "when", "Leviathan", "is", "the", "text", "case", "altered", "Fain", "am", "I", "to", "stagger", "this", "emprise", "under", "weightiest", "words", "of", "dictionary", "And", "here", "be", "it", "said", "that", "whenever", "has", "been", "convenient", "consult", "one", "in", "course", "these", "dissertations", "have", "invariably", "used", "a", "huge", "quarto", "edition", "Johnson", "expressly", "purchased", "for", "purpose"],
+    "frequencies": {
+        "But": 1,
+        "when": 1,
+        "Leviathan": 1,
+        "is": 2,
+        "the": 5,
+        "text": 1,
+        "case": 1,
+        "altered": 1,
+        "Fain": 1,
+        "am": 1,
+        "I": 2,
+        "to": 3,
+        "stagger": 1,
+        "this": 1,
+        "emprise": 1,
+        "under": 1,
+        "weightiest": 1,
+        "words": 1,
+        "of": 3,
+        "dictionary": 1,
+        "And": 1,
+        "here": 1,
+        "be": 1,
+        "it": 2,
+        "said": 1,
+        "that": 2,
+        "whenever": 1,
+        "has": 1,
+        "been": 1,
+        "convenient": 1,
+        "consult": 1,
+        "one": 1,
+        "in": 1,
+        "course": 1,
+        "these": 1,
+        "dissertations": 1,
+        "have": 1,
+        "invariably": 1,
+        "used": 1,
+        "a": 1,
+        "huge": 1,
+        "quarto": 1,
+        "edition": 1,
+        "Johnson": 1,
+        "expressly": 1,
+        "purchased": 1,
+        "for": 1,
+        "purpose": 1
+    }
 }
 ```
 
