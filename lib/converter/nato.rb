@@ -15,5 +15,5 @@ module Converter
         NATO::Text.new(line).to_nato
       end
     end
-  end # Nato
-end # Converter
+  end
+end

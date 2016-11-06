@@ -1,17 +1,17 @@
-require File.expand_path("../boot", __FILE__)
+require File.expand_path('../boot', __FILE__)
 
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "sprockets/railtie"
-require "rails/test_unit/railtie"
+require 'rails/all'
 
-Bundler.require(:default, Rails.env)
+Bundler.require(*Rails.groups)
 
 module Corrasable
   class Application < Rails::Application
-    config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += %W(
+      #{config.root}/lib
+      #{config.root}/app/serializers
+    )
 
-    config.encoding = "utf-8"
+    config.encoding = 'utf-8'
 
     config.filter_parameters += [:password]
 
@@ -19,12 +19,12 @@ module Corrasable
 
     config.assets.enabled = true
 
-    config.assets.version = "1.0"
+    config.assets.version = '1.0'
 
     config.middleware.use Rack::Cors do
       allow do
-        origins "*"
-        resource "*", headers: :any, methods: [:get, :post, :options]
+        origins '*'
+        resource '*', headers: :any, methods: [:get, :post, :options]
       end
     end
   end

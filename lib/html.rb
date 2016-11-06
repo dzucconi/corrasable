@@ -1,9 +1,10 @@
-class Markdown
+class HTML
   DEFAULTS = {
     autolink: true,
     fenced_code_blocks: true,
     hard_wrap: true,
-    prettify: false
+    prettify: false,
+    tables: true
   }
 
   RENDERER = Redcarpet::Render::HTML
@@ -11,4 +12,4 @@ class Markdown
   def self.render(string)
     Redcarpet::Markdown.new(RENDERER, DEFAULTS).render(string)
   end
-end # Markdown
+end
