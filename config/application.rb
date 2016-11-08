@@ -8,10 +8,8 @@ Bundler.require(*Rails.groups)
 
 module Corrasable
   class Application < Rails::Application
-    config.autoload_paths += %W(
-      #{config.root}/lib
-      #{config.root}/app/serializers
-    )
+    config.autoload_paths << "#{Rails.root}/lib"
+    config.autoload_paths << "#{Rails.root}/app/serializers"
 
     config.encoding = 'utf-8'
 
