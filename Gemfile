@@ -1,6 +1,7 @@
 ruby '2.3.1'
 source 'https://rubygems.org'
 
+gem 'puma'
 gem 'rails', '~> 5.0', '>= 5.0.0.1'
 gem 'lingua'
 gem 'oj'
