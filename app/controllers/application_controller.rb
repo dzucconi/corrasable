@@ -1,6 +1,5 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
   def home
-    @output = Markdown.render(File.open("#{Rails.root}/README.md").read)
-    render html: "application/home", layout: "layouts/application"
+    @output = HTML.render(File.open("#{Rails.root}/README.md").read)
   end
 end

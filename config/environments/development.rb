@@ -1,5 +1,6 @@
 Corrasable::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  config.debug_exception_response_format = :default
 
   config.eager_load = false
 

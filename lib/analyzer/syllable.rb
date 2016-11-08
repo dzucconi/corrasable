@@ -3,7 +3,7 @@ module Analyzer
     attr_reader :string, :tokenizer, :syllables
 
     def initialize(string)
-      @string    = string
+      @string = string
       @tokenizer = Tokenizer::Tokenizer.new(:en)
     end
 
@@ -28,5 +28,5 @@ module Analyzer
         end
       end
     end
-  end # Syllable
-end # Analyzer
+  end
+end

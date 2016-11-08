@@ -3,7 +3,7 @@ module Converter
     attr_reader :string, :tokenizer, :phonemes
 
     def initialize(string)
-      @string    = string
+      @string = string
       @tokenizer = Tokenizer::Tokenizer.new(:en)
     end
 
@@ -28,5 +28,5 @@ module Converter
         end
       end
     end
-  end # Phoneme
-end # Converter
+  end
+end

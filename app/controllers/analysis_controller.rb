@@ -1,7 +1,7 @@
 class AnalysisController < ApplicationController
   def report
-    @report = Lingua::EN::Readability.new(params[:text])
-    render "analysis/report"
+    @report = Analyzer::Report.new(params[:text])
+    render json: @report, serializer: ReportSerializer
   end
 
   def syllables

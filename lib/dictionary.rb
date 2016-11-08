@@ -3,7 +3,7 @@ class Dictionary
     en: "#{Rails.root}/db/cmudict.0.7a.txt"
   }
 
-  def self.generate(language=:en)
+  def self.generate(language = :en)
     IO.foreach(DICTIONARIES[language]).each do |line|
       next if line !~ /^[A-Z]/
 
@@ -26,4 +26,4 @@ class Dictionary
 
     Word.create!(word: word.upcase, phonemes: phonemes, syllables: syllables.to_i, language: language)
   end
-end # Dictionary
+end

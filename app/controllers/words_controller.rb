@@ -1,6 +1,6 @@
 class WordsController < ApplicationController
   def show
-    @word = Word.find_by(word: params[:id].upcase)
-    render "words/show"
+    @word = Word.lookup(params[:id])
+    render json: @word
   end
 end
