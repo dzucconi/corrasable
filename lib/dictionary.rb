@@ -1,7 +1,7 @@
 class Dictionary
   DICTIONARIES = {
     en: "#{Rails.root}/db/cmudict.0.7a.txt"
-  }
+  }.freeze
 
   def self.generate(language = :en)
     IO.foreach(DICTIONARIES[language]).each do |line|
@@ -21,7 +21,7 @@ class Dictionary
     end
   end
 
-  def self.create(word, phonemes, syllables, language=:en)
+  def self.create(word, phonemes, syllables, language = :en)
     puts "#{word} #{phonemes} - #{syllables} (#{language})"
 
     Word.create!(word: word.upcase, phonemes: phonemes, syllables: syllables.to_i, language: language)

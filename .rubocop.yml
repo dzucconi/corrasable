@@ -1,0 +1,70 @@
+AllCops:
+  Exclude:
+    - tmp/**/*
+    - vendor/**/*
+    - bin/**
+    - db/schema.rb
+    - node_modules/**/*
+
+LineLength:
+  Enabled: false
+
+AssignmentInCondition:
+  Enabled: false
+
+MethodLength:
+  Enabled: false
+
+ColonMethodCall:
+  Enabled: false
+
+ClassLength:
+  Enabled: true
+
+SignalException:
+  EnforcedStyle: only_raise
+
+SingleLineBlockParams:
+  Enabled: true
+
+FileName:
+  Enabled: true
+
+Documentation:
+  Enabled: false
+
+CollectionMethods:
+  Enabled: true
+
+StringLiterals:
+  Enabled: true
+
+Encoding:
+  Enabled: false
+
+AsciiComments:
+  Enabled: false
+
+AlignParameters:
+  Enabled: false
+
+AlignHash:
+  Enabled: false
+
+MultilineBlockChain:
+  Enabled: false
+
+RedundantSelf:
+  Enabled: false
+
+ParameterLists:
+  Max: 7
+
+TrivialAccessors:
+  Enabled: false
+
+AbcSize:
+  Enabled: false
+
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented

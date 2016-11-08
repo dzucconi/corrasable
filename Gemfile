@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0', '>= 5.0.0.1'
 gem 'lingua'
 gem 'oj'
-gem 'mongoid'
+gem 'mongoid', '~> 6.0.0'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'rack-cors'
 gem 'tokenizer'
@@ -21,4 +21,9 @@ end
 
 group :development do
   gem 'foreman'
+  gem 'spring'
+end
+
+group :development, :text do
+  gem 'rubocop'
 end

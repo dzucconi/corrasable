@@ -1,3 +1,5 @@
+# rubocop:disable Metrics/BlockLength
+
 Corrasable::Application.routes.draw do
   get  '/' => 'application#home'
 
