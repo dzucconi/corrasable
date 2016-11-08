@@ -5,7 +5,7 @@ class HTML
     hard_wrap: true,
     prettify: false,
     tables: true
-  }
+  }.freeze
 
   RENDERER = Redcarpet::Render::HTML
 

@@ -1,14 +1,14 @@
 class Word
   include Mongoid::Document
 
-  MISSING = 'N/A'
+  MISSING = 'N/A'.freeze
 
   field :word
   field :phonemes, type: Array, default: [MISSING]
   field :syllables, type: Integer
   field :language, type: Symbol
 
-  index({ word: 1 }, { name: 'word_index' })
+  index({ word: 1 }, name: 'word_index')
 
   class << self
     def lookup(word)
