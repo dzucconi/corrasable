@@ -16,6 +16,7 @@ gem 'coffee-rails'
 gem 'uglifier'
 gem 'engtagger'
 gem 'phonetic'
+gem 'numbers_in_words'
 
 group :production do
   gem 'rails_12factor'

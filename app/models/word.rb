@@ -12,7 +12,7 @@ class Word
 
   class << self
     def lookup(word)
-      find_by(word: word.upcase)
+      find_by(word: word.upcase.gsub(/\s/, ''))
     rescue Mongoid::Errors::DocumentNotFound
       new(word: word.upcase).tap do |instance|
         # Experimental: stream of letters pronounced

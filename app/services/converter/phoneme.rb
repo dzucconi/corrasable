@@ -1,30 +1,18 @@
 module Converter
   class Phoneme
-    attr_reader :string, :tokenizer, :phonemes
+    attr_reader :input, :sanitizer, :phonemes
 
-    def initialize(string)
-      @string = string
-      @tokenizer = Tokenizer::Tokenizer.new(:en)
-    end
-
-    def lines
-      string.split("\n")
-    end
-
-    def tokenized_lines
-      lines.map do |line|
-        tokenizer.tokenize(line)
-      end
+    def initialize(input)
+      @input = input
+      @sanitizer = Sanitizer.new(input)
     end
 
     def phonemes
-      @phonemes ||= tokenized_lines.map do |words|
-        words.map do |word|
-          if /^\W$/ =~ word
-            word
-          else
-            Word.phonemes(word)
-          end
+      @phonemes ||= sanitizer.output.map do |token|
+        if /^\W$/ =~ token
+          token
+        else
+          Word.phonemes(token)
         end
       end
     end
