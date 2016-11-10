@@ -15,6 +15,7 @@ gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
 gem 'engtagger'
+gem 'phonetic'
 
 group :production do
   gem 'rails_12factor'
@@ -25,6 +26,7 @@ group :development do
   gem 'spring'
 end
 
-group :development, :text do
+group :development, :test do
   gem 'rubocop'
+  gem 'byebug'
 end
