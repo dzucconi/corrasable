@@ -54,6 +54,7 @@ GEM
     ast (2.3.0)
     bson (4.1.1)
     builder (3.2.2)
+    byebug (9.0.6)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -97,6 +98,7 @@ GEM
     oj (2.17.5)
     parser (2.3.1.4)
       ast (~> 2.2)
+    phonetic (1.2.0)
     powerpack (0.1.1)
     puma (3.6.0)
     rack (2.0.1)
@@ -176,12 +178,14 @@ PLATFORMS
 DEPENDENCIES
   NATO!
   active_model_serializers (~> 0.10.0)
+  byebug
   coffee-rails
   engtagger
   foreman
   lingua
   mongoid (~> 6.0.0)
   oj
+  phonetic
   puma
   rack-cors
   rails (~> 5.0, >= 5.0.0.1)
