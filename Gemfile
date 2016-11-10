@@ -25,6 +25,7 @@ group :development do
   gem 'spring'
 end
 
-group :development, :text do
+group :development, :test do
   gem 'rubocop'
+  gem 'byebug'
 end
