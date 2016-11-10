@@ -29,4 +29,5 @@ end
 group :development, :test do
   gem 'rubocop'
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
 end
