@@ -32,4 +32,10 @@ Corrasable::Application.routes.draw do
     get :report
     post :report
   end
+
+  namespace :phonetic do
+    get '', action: :index
+    post '', action: :index
+    get 'algorithms'
+  end
 end
