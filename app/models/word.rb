@@ -10,7 +10,24 @@ class Word
 
   index({ word: 1 }, name: 'word_index')
 
+  Phonetic::Index::ALGORITHMS.each do |algorithm|
+    field algorithm
+    index({}.tap { |hsh| hsh[algorithm] = 1 })
+  end
+
+  after_initialize do
+    unless self.persisted?
+      Phonetic::Index::ALGORITHMS.each do |algorithm|
+        self[algorithm] = self.send(algorithm).presence || Phonetic::Index.send(algorithm, word)
+      end
+    end
+  end
+
   class << self
+    def search(word, algorithm = Phonetic::Index::DEFAULT_ALGORITHM)
+      Word.where({}.tap { |hsh| hsh[algorithm] = lookup(word).send(algorithm.to_sym) })
+    end
+
     def lookup(word)
       find_by(word: word.upcase.gsub(/\s/, ''))
     rescue Mongoid::Errors::DocumentNotFound
