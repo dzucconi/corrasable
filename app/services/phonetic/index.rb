@@ -5,7 +5,7 @@ module Phonetic
       caverphone caverphone2 nysiis refined_nysiis dm_soundex
     ).freeze
 
-    DEFAULT_ALGORITHM = :refined_soundex
+    DEFAULT_ALGORITHM = :soundex
 
     class << self
       def default(word)

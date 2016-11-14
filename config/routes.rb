@@ -8,7 +8,11 @@ Corrasable::Application.routes.draw do
   post '/phonemes' => 'conversion#phonemes'
   post '/nato' => 'conversion#nato'
 
-  resources :words, only: [:show]
+  resources :words, only: [:show] do
+    collection do
+      get 'search'
+    end
+  end
 
   resources :tags, only: [:index] do
     collection do

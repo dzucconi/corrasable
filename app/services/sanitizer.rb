@@ -12,8 +12,8 @@ class Sanitizer
   def output
     lines.map do |tokens|
       tokens.map do |token|
-        if self.class.is_number?(token)
-          tokenizer.tokenize(NumbersInWords.in_words token.to_i)
+        if self.class.number?(token)
+          tokenizer.tokenize(NumbersInWords.in_words(token.to_i))
         else
           token
         end
@@ -21,7 +21,7 @@ class Sanitizer
     end
   end
 
-  def self.is_number?(token)
-    !!(token =~ /\A[-+]?[0-9]+\z/)
+  def self.number?(token)
+    !(token =~ /\A[-+]?[0-9]+\z/).nil?
   end
 end
