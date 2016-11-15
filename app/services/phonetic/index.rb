@@ -8,13 +8,13 @@ module Phonetic
     DEFAULT_ALGORITHM = :soundex
 
     class << self
-      def default(word)
-        send(DEFAULT_ALGORITHM, word)
+      def default(token)
+        send(DEFAULT_ALGORITHM, token)
       end
 
       ALGORITHMS.map do |algorithm|
-        define_method(algorithm.to_sym) do |word|
-          word.send(algorithm.to_sym)
+        define_method(algorithm.to_sym) do |token|
+          token.send(algorithm.to_sym)
         end
       end
     end
