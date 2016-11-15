@@ -14,4 +14,9 @@ class PhoneticController < ApplicationController
   def algorithms
     render json: Phonetic::Index::ALGORITHMS
   end
+
+  def suggestions
+    @suggestions = Phonetic::Suggester.new(params[:text]).suggestions
+    render json: @suggestions
+  end
 end

@@ -40,6 +40,7 @@ Corrasable::Application.routes.draw do
   namespace :phonetic do
     get '', action: :index
     post '', action: :index
-    get 'algorithms'
+    get :algorithms
+    get :suggestions
   end
 end
