@@ -5,7 +5,12 @@ class WordsController < ApplicationController
   end
 
   def search
-    @words = Word.search(params.require(:q), params[:algorithm] || Phonetic::Index::DEFAULT_ALGORITHM)
+    query = params.require(:q)
+    algorithm = params[:algorithm] || Phonetic::Index::DEFAULT_ALGORITHM
+    limit = params[:limit].to_i || 10
+
+    @words = Word.search(query, algorithm, limit)
+
     render json: @words
   end
 end

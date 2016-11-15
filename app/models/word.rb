@@ -7,8 +7,9 @@ class Word
   field :phonemes, type: Array, default: [MISSING]
   field :syllables, type: Integer
   field :language, type: Symbol
+  field :random, type: Float, default: proc { rand }
 
-  index({ word: 1 }, name: 'word_index')
+  index({ word: 1 })
 
   Phonetic::Index::ALGORITHMS.each do |algorithm|
     field algorithm
@@ -24,8 +25,9 @@ class Word
   end
 
   class << self
-    def search(word, algorithm = Phonetic::Index::DEFAULT_ALGORITHM)
-      Word.where({}.tap { |hsh| hsh[algorithm] = lookup(word).send(algorithm.to_sym) })
+    def search(word, algorithm = Phonetic::Index::DEFAULT_ALGORITHM, limit = 10)
+      criteria = {}.tap { |hsh| hsh[algorithm] = lookup(word).send(algorithm.to_sym) }
+      Word.where(criteria).limit(limit)
     end
 
     def lookup(word)
