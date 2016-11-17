@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'engtagger'
 gem 'phonetic'
 gem 'numbers_in_words'
+gem 'parallel'
 
 group :production do
   gem 'rails_12factor'

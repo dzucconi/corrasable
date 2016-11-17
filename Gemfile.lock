@@ -99,6 +99,7 @@ GEM
     numbers_in_words (0.4.0)
       activesupport
     oj (2.17.5)
+    parallel (1.9.0)
     parser (2.3.1.4)
       ast (~> 2.2)
     phonetic (1.2.0)
@@ -206,6 +207,7 @@ DEPENDENCIES
   mongoid (~> 6.0.0)
   numbers_in_words
   oj
+  parallel
   phonetic
   puma
   rack-cors

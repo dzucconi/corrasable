@@ -7,19 +7,38 @@ module Phonetic
       @sanitizer = Sanitizer.new(input)
     end
 
+    def suggest(token)
+      algorithm = Phonetic::Index::DEFAULT_ALGORITHM
+
+      criteria = {}.tap { |hsh| hsh[algorithm] = token.send(algorithm) }
+
+      suggestions = Word.collection.aggregate([
+        { '$match': criteria },
+        { '$sample': { size: 3 } },
+        { '$project': { word: 1 } }
+      ]).to_a.map { |suggestion| suggestion['word'] }
+    end
+
     def suggestions
       @suggestions ||= sanitizer.output.map do |tokens|
-        tokens.reduce({}) do |memo, token|
-          if /^\W$/ =~ token
-            memo[token] = []
-          else
-            algorithm = Phonetic::Index::DEFAULT_ALGORITHM
-            criteria = {}.tap { |hsh| hsh[algorithm] = token.send(algorithm) }
-            memo[token] = Word.where(criteria).sample(3).map(&:word)
+        results = Parallel.map(tokens) do |token|
+          { token: token }.tap do |hsh|
+            if /^\W$/ =~ token
+              hsh[:suggestions] = []
+            else
+              hsh[:suggestions] = suggest(token)
+            end
           end
-
-          memo
         end
+
+        suggestions = tokens.map do |token|
+          results.find { |r| r[:token] == token }[:suggestions]
+        end
+
+        {
+          tokens: tokens,
+          suggestions: suggestions
+        }
       end
     end
   end
