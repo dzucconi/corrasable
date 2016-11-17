@@ -10,6 +10,7 @@ class Word
   field :random, type: Float, default: proc { rand }
 
   index({ word: 1 })
+  index({ random: 1 })
 
   Phonetic::Index::ALGORITHMS.each do |algorithm|
     field algorithm
