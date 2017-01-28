@@ -18,6 +18,8 @@ gem 'engtagger'
 gem 'phonetic'
 gem 'numbers_in_words'
 gem 'parallel'
+gem 'kaminari-mongoid'
+gem 'kaminari-actionview'
 
 group :production do
   gem 'rails_12factor'
