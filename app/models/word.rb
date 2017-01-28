@@ -7,10 +7,11 @@ class Word
   field :phonemes, type: Array, default: [MISSING]
   field :syllables, type: Integer
   field :language, type: Symbol
-  field :random, type: Float, default: proc { rand }
 
-  index({ word: 1 })
-  index({ random: 1 })
+  index(syllables: 1)
+  index(syllables: -1)
+  index(word: 1)
+  index(word: -1)
 
   Phonetic::Index::ALGORITHMS.each do |algorithm|
     field algorithm

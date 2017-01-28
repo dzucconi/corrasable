@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     @output = HTML.render(File.open("#{Rails.root}/README.md").read)
   end
 
-private
+  private
 
   def allow_iframe
     response.headers.except! 'X-Frame-Options'
