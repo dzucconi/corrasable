@@ -1,10 +1,14 @@
 AllCops:
+  TargetRubyVersion: 2.3
   Exclude:
     - tmp/**/*
     - vendor/**/*
     - bin/**
     - db/schema.rb
     - node_modules/**/*
+
+FrozenStringLiteralComment:
+  Enabled: false
 
 LineLength:
   Enabled: false
