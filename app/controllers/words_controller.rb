@@ -1,5 +1,7 @@
 class WordsController < ApplicationController
   def index
+    syllables = params[:syllables].present? ? params[:syllables].to_i : 1..99
+
     @words = Word
       .where(syllables: syllables)
       .order_by({}.tap { |hsh| hsh[order_by] = direction })
@@ -10,17 +12,17 @@ class WordsController < ApplicationController
   end
 
   def suggestions
-    criteria = { syllables: syllables }
+    query = [
+      { '$match': { word: { '$not': /\'/ } } },
+      { '$sample': { size: per(10) } },
+      { '$project': { word: 1 } }
+    ]
 
-    records = Word.collection.aggregate(
-      [
-        { '$match': criteria },
-        { '$sample': { size: per(3) } },
-        { '$project': { word: 1 } }
-      ]
-    ).to_a
+    if params[:syllables].present?
+      query.unshift('$match': { syllables: params[:syllables].to_i })
+    end
 
-    @words = Parallel.map(records) { |x| x['word'] }
+    @words = Word.collection.aggregate(query).to_a.pluck(:word)
 
     render json: @words
   end
@@ -41,10 +43,6 @@ class WordsController < ApplicationController
   end
 
   private
-
-  def syllables
-    params[:syllables].present? ? params[:syllables].to_i : 1..99
-  end
 
   def order_by
     (params[:order_by] || :word).to_sym
