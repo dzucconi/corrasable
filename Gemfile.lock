@@ -77,6 +77,13 @@ GEM
       jsonapi-renderer (= 0.1.1.beta1)
     jsonapi-parser (0.1.1.beta3)
     jsonapi-renderer (0.1.1.beta1)
+    kaminari-actionview (1.0.1)
+      actionview
+      kaminari-core (= 1.0.1)
+    kaminari-core (1.0.1)
+    kaminari-mongoid (1.0.1)
+      kaminari-core (~> 1.0)
+      mongoid
     lingua (0.6.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
@@ -203,6 +210,8 @@ DEPENDENCIES
   coffee-rails
   engtagger
   foreman
+  kaminari-actionview
+  kaminari-mongoid
   lingua
   mongoid (~> 6.0.0)
   numbers_in_words
@@ -225,4 +234,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.13.6
+   1.13.7

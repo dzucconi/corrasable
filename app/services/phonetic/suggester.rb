@@ -12,22 +12,25 @@ module Phonetic
 
       criteria = {}.tap { |hsh| hsh[algorithm] = token.send(algorithm) }
 
-      suggestions = Word.collection.aggregate([
-        { '$match': criteria },
-        { '$sample': { size: 3 } },
-        { '$project': { word: 1 } }
-      ]).to_a.map { |suggestion| suggestion['word'] }
+      Word.collection.aggregate(
+        [
+          { '$match': criteria },
+          { '$sample': { size: 3 } },
+          { '$project': { word: 1 } }
+        ]
+      ).to_a.map { |suggestion| suggestion['word'] }
     end
 
     def suggestions
       @suggestions ||= sanitizer.output.map do |tokens|
         results = Parallel.map(tokens) do |token|
           { token: token }.tap do |hsh|
-            if /^\W$/ =~ token
-              hsh[:suggestions] = []
-            else
-              hsh[:suggestions] = suggest(token)
-            end
+            hsh[:suggestions] =
+              if /^\W$/ =~ token
+                []
+              else
+                suggest(token)
+              end
           end
         end
 
