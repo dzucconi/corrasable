@@ -1,4 +1,9 @@
 namespace :data do
+  desc 'Seed database with words from CMUdict'
+  task dictionary: :environment do
+    Dictionary.generate(:en)
+  end
+
   desc 'Cache phonetic indexes on Words'
   task phonetic: :environment do
     puts 'Loading'
