@@ -2,7 +2,7 @@
   "name": "Corrasable",
   "description": "API that packages together different tools for manipulating language",
   "keywords": [
-    "language",
+    "language"
   ],
   "website": "https://corrasable.com/",
   "repository": "https://github.com/dzucconi/corrasable",
