@@ -24,6 +24,6 @@ class Dictionary
   def self.create(word, phonemes, syllables, language = :en, silent = false)
     puts "#{word} #{phonemes} - #{syllables} (#{language})" unless silent
 
-    Word.create!(word: word.upcase, phonemes: phonemes, syllables: syllables.to_i, language: language)
+    Word.find_or_create_by!(word: word.upcase, phonemes: phonemes, syllables: syllables.to_i, language: language)
   end
 end
