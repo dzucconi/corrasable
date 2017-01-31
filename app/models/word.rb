@@ -4,14 +4,16 @@ class Word
   MISSING = 'N/A'.freeze
 
   field :word
+  validates_uniqueness_of :word
+
   field :phonemes, type: Array, default: [MISSING]
   field :syllables, type: Integer
   field :language, type: Symbol
 
   index(syllables: 1)
   index(syllables: -1)
-  index(word: 1)
-  index(word: -1)
+  index({ word: 1 }, { unique: true })
+  index({ word: -1 }, { unique: true })
 
   Phonetic::Index::ALGORITHMS.each do |algorithm|
     field algorithm
