@@ -6,9 +6,6 @@
   ],
   "website": "https://corrasable.com/",
   "repository": "https://github.com/dzucconi/corrasable",
-  "scripts": {
-    "postdeploy": "bundle exec rake bootstrap:seed"
-  },
   "image": "heroku/ruby",
   "addons": [
     {
