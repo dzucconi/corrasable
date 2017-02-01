@@ -6,3 +6,6 @@ services:
 script:
 - bundle exec rubocop
 - bundle exec rspec
+deploy:
+  api_key:
+    secure: XC86kXpXVrPHqH36anyFL+4HBWbdVRxd7vwinYjFCkdUPSMl4TwteouMEnvFF5zrIWq3e5ha4my8bkra0lYemO0IKstfsr7CXr77wgJeHc2itDkH82UEOMVHvyNw9d5E8nX5f7DrP/ipyoePScE7AXe8yeY1jHg/PdGt2kiSKtg=
