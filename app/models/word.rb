@@ -12,8 +12,8 @@ class Word
 
   index(syllables: 1)
   index(syllables: -1)
-  index({ word: 1 }, { unique: true })
-  index({ word: -1 }, { unique: true })
+  index({ word: 1 }, unique: true)
+  index({ word: -1 }, unique: true)
 
   Phonetic::Index::ALGORITHMS.each do |algorithm|
     field algorithm
