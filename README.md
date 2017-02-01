@@ -37,4 +37,4 @@ bundle exec rake bootstrap:seed
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dzucconi/corrasable/tree/master)
 
-Due to issues with the running length of the initial database import the bootstrap Rake task doesn't run automatically post-install. It's recommended that you push a local mongodump to the production database once it's set up.
+Due to issues with the running length of the initial database import, the bootstrap Rake task will not run automatically post-install. It's recommended that you push a local mongodump to the production database once it's set up.
