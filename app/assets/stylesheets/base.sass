@@ -1,0 +1,41 @@
+html
+  box-sizing: border-box
+
+*,
+*:before,
+*:after
+  box-sizing: inherit
+
+body
+  margin: 2em
+  background-color: white
+  color: black
+  line-height: 1.33
+  font-family: 'Helvetica Neue', 'helvetica', sans-serif
+  -webkit-font-smoothing: antialiased
+
+a
+  color: #03f
+  text-decoration: none
+
+h1,
+h2,
+h3
+  margin: 2em auto
+  font-size: 125%
+  font-weight: normal
+  text-align: center
+  &:first-child
+    margin-top: 0
+  &:last-child
+    margin-bottom: 0
+
+pre
+  overflow-y: hidden
+  overflow-x: auto
+  font-family: monospace
+  border: 1px solid #eee
+
+.content
+  width: 75%
+  margin: 0 auto
