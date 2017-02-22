@@ -34,12 +34,16 @@ class Word
       Word.where(criteria).limit(limit)
     end
 
-    def lookup(word)
+    def lookup(word, fallback = true)
       find_by(word: word.upcase.gsub(/\s/, ''))
     rescue Mongoid::Errors::DocumentNotFound
       new(word: word.upcase).tap do |instance|
-        # Experimental: stream of letters pronounced
-        instance.phonemes = word.split('').map { |letter| lookup(letter).phonemes }.flatten
+        if fallback
+          # Experimental: stream of letters pronounced
+          instance.phonemes = word.split('').map { |letter| lookup(letter, false).phonemes }.flatten
+        else
+          MISSING
+        end
         # Mismatches between phonemes above and syllables, which can be guessed relatively accurately
         instance.syllables = Lingua::EN::Syllable.syllables(word)
       end
