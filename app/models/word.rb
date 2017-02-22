@@ -40,7 +40,15 @@ class Word
       new(word: word.upcase).tap do |instance|
         if fallback
           # Experimental: stream of letters pronounced
-          instance.phonemes = word.split('').map { |letter| lookup(letter, false).phonemes }.flatten
+          instance.phonemes = word.split('').map do |letter|
+            token = Sanitizer.wordify(letter)
+            # What we cannot speak about we must pass over in silence.
+            if token == ''
+              ''
+            else
+              lookup(token, false).phonemes
+            end
+          end.flatten
         else
           MISSING
         end
