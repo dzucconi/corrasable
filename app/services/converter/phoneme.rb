@@ -10,11 +10,7 @@ module Converter
     def phonemes
       @phonemes ||= sanitizer.output.map do |tokens|
         tokens.map do |token|
-          if /^\W$/ =~ token
-            token
-          else
-            Word.phonemes(token)
-          end
+          Word.phonemes(token)
         end
       end
     end
