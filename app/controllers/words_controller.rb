@@ -11,6 +11,18 @@ class WordsController < ApplicationController
     render json: @words, serializer: WordsSerializer
   end
 
+  def bulk
+    sanitizer = Sanitizer.new(params.require(:text))
+
+    @words ||= sanitizer.output.map do |tokens|
+      tokens.map do |token|
+        Word.lookup token
+      end
+    end
+
+    render json: @words, serializer: WordsSerializer
+  end
+
   def suggestions
     query = [
       { '$match': { word: { '$not': /\'/ } } },

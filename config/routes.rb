@@ -8,8 +8,10 @@ Corrasable::Application.routes.draw do
 
   resources :words, only: [:index, :show] do
     collection do
-      get 'search'
-      get 'suggestions'
+      get :bulk
+      post :bulk
+      get :search
+      get :suggestions
     end
   end
 
