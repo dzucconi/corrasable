@@ -65,7 +65,7 @@ class Word
     end
 
     def phonemes(word)
-      lookup(word).phonemes.join(' ')
+      lookup(word).phonemes
     rescue Mongoid::Errors::DocumentNotFound
       MISSING
     end
