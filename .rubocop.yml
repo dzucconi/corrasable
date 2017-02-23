@@ -1,5 +1,6 @@
 AllCops:
   TargetRubyVersion: 2.3
+  DisplayCopNames: true
   Exclude:
     - tmp/**/*
     - vendor/**/*
@@ -15,6 +16,9 @@ LineLength:
 
 AssignmentInCondition:
   Enabled: false
+
+BlockLength:
+ Enabled: false
 
 MethodLength:
   Enabled: false
