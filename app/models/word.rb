@@ -34,8 +34,14 @@ class Word
       Word.where(criteria).limit(limit)
     end
 
+    def sanitize(token)
+      Sanitizer.strip_whitespace(token.upcase)
+        .gsub(/[^\w|\d|'|’]/, '') # Strip any punctuation, leaving apostrophes
+        .gsub(/’/, '\'') # Replace rsquo
+    end
+
     def lookup(word, fallback = true)
-      find_by(word: word.upcase.gsub(/\s/, ''))
+      find_by word: sanitize(word)
     rescue Mongoid::Errors::DocumentNotFound
       new(word: word.upcase).tap do |instance|
         if fallback

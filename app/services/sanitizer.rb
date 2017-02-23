@@ -8,6 +8,10 @@ class Sanitizer
       input.chomp.strip.split(WHITESPACE)
     end
 
+    def strip_whitespace(input)
+      input.gsub WHITESPACE, ''
+    end
+
     def wordify(token)
       if self.number? token
         NumbersInWords.in_words token.to_i
