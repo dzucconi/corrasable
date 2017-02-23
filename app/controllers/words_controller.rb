@@ -18,7 +18,7 @@ class WordsController < ApplicationController
       tokens.map do |token|
         Word.lookup token
       end
-    end
+    end.flatten
 
     render json: @words, serializer: WordsSerializer
   end
