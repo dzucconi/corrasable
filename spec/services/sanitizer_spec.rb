@@ -26,5 +26,10 @@ RSpec.describe Sanitizer do
       s = Sanitizer.new('number 88')
       expect(s.output).to eql [%w(number eighty eight)]
     end
+
+    it 'handles contractions' do
+      s = Sanitizer.new("You're the worst")
+      expect(s.output).to eql [%w(You're the worst)]
+    end
   end
 end
