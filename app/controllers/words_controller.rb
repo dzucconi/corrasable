@@ -58,7 +58,7 @@ class WordsController < ApplicationController
     letter = params.require(:letter).chars.first
     @words = Word.where(word: /^#{letter}/i).pluck(:word)
 
-    render json: @words.reverse
+    render json: @words.sort
   end
 
   private
