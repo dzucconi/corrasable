@@ -12,6 +12,7 @@ Corrasable::Application.routes.draw do
       post :bulk
       get :search
       get :suggestions
+      get :letter
     end
   end
 
