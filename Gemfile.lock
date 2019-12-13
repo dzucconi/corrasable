@@ -64,7 +64,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.0.4)
+    concurrent-ruby (1.1.5)
     diff-lcs (1.3)
     engtagger (0.2.1)
     erubis (2.7.0)
@@ -114,7 +114,7 @@ GEM
     phonetic (1.2.0)
     powerpack (0.1.1)
     puma (3.7.1)
-    rack (2.0.1)
+    rack (2.0.7)
     rack-cors (0.4.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -182,7 +182,7 @@ GEM
       tilt (>= 1.1, < 3)
     spring (2.0.1)
       activesupport (>= 4.2)
-    sprockets (3.7.1)
+    sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.2.0)
