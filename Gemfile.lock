@@ -113,7 +113,7 @@ GEM
       ast (~> 2.2)
     phonetic (1.2.0)
     powerpack (0.1.1)
-    puma (3.7.1)
+    puma (3.12.6)
     rack (2.0.1)
     rack-cors (0.4.1)
     rack-test (0.6.3)
