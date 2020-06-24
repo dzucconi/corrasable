@@ -114,7 +114,7 @@ GEM
     phonetic (1.2.0)
     powerpack (0.1.1)
     puma (3.7.1)
-    rack (2.0.1)
+    rack (2.2.3)
     rack-cors (0.4.1)
     rack-test (0.6.3)
       rack (>= 1.0)
