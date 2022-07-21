@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/dzucconi/NATO.git
+  remote: https://github.com/dzucconi/NATO.git
   revision: 43bad1e256f378a42d9d6ab4b2f382eb2c2d0023
   specs:
     NATO (0.0.2)
@@ -193,7 +193,7 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.6)
     tokenizer (0.3.0)
-    tzinfo (1.2.2)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
